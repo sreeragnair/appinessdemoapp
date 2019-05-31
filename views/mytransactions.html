@@ -1,0 +1,89 @@
+
+
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+ 
+
+  <section class="subBanner">
+      <div class="container">
+        <div class="row">
+              <span class="subPageTitle"><i class="icon-calendar-full"></i><span>My Transactions</span></span>
+        </div>
+      </div>
+    </section>
+
+  <section class="subContentArea">
+    <div class="container">
+      <div class="course-cards-wrap">
+
+      
+        <div class="course-card">
+          <div class="course-single-item clearfix">
+            
+              <div class="course-details clearfix">
+                <div class="course-top-part">
+                  <h4 class="">received</h4>
+                </div>
+                <div class="clearfix"></div>
+               
+                  <ul class="list-inline listBullet">
+
+                      {% for x in user.received %}
+                    <li> {{x.username}}</li>
+                    <p> {{x.amount}}</p>
+
+                    {% endfor %}
+                  </ul>
+            
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="course-card">
+            <div class="course-single-item clearfix">
+              
+                <div class="course-details clearfix">
+                  <div class="course-top-part">
+                    <h4 class="">Sented</h4>
+                  </div>
+                  <div class="clearfix"></div>
+                 
+                    <ul class="list-inline listBullet">
+  
+                        {% for x in user.sent %}
+                      <li> {{x.username}}</li>
+                      <p> {{x.amount}}</p>
+  
+                      {% endfor %}
+                    </ul>
+              
+                </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+    
+    {% endblock %}
